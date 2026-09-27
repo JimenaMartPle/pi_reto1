@@ -40,9 +40,10 @@ public class Noticia {
   @Override
   public String toString() {
     String s = "";
-    s+=fecha%100 + "/" + (fecha/100)%100+ "/" + (fecha/10000) + " - ";
-    s+=(hora/100) + ":" + (hora%100) + "\n";
-    s+=texto + "\n";
-    s+="Leída " + lecturas + " veces\n"; return s;
+    s += String.format("%02d/%02d/%04d", fecha % 100, (fecha / 100) % 100, fecha / 10000) + " - ";
+    s += String.format("%02d:%02d", hora / 100, hora % 100) + "\n";
+    s += texto + "\n";
+    s += "Leída " + lecturas + " veces\n";
+    return s;
   }
 }
